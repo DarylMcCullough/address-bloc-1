@@ -8,7 +8,7 @@ class MenuController
   end
 
   def main_menu
-    puts "Main Menu - #{address_book.entries.count} entries"
+    puts "#{@address_book.name} Address Book - #{Entry.count} entries"
     puts "1 - View all entries"
     puts "2 - Create an entry"
     puts "3 - Search for an entry"
