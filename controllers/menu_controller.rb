@@ -4,7 +4,7 @@ class MenuController
   attr_reader :address_book
 
   def initialize
-    @address_book = AddressBook.new
+    @address_book = AddressBook.first
   end
 
   def main_menu
@@ -46,7 +46,7 @@ class MenuController
   end
 
   def view_all_entries
-    address_book.entries.each do |entry|
+    Entry.all.each do |entry|
       system "clear"
       puts entry.to_s
       entry_submenu(entry)
@@ -75,7 +75,7 @@ class MenuController
   def search_entries
     print "Search by name: "
     name = gets.chomp
-    match = address_book.binary_search(name)
+    match = Entry.find_by(:name, name)    
     system "clear"
     if match
       puts match.to_s
