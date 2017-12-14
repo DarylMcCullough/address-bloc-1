@@ -18,7 +18,7 @@ SQL
 
 db.execute <<-SQL
     INSERT INTO address_book (id, name)
-    VALUES (12, "Sam");
+    VALUES (1, "My first address book");
 SQL
  
 db.execute <<-SQL

@@ -8,7 +8,7 @@ class MenuController
   end
 
   def main_menu
-    puts "#{@address_book.name} Address Book Selected\n#{@address_book.entries.count} entries"
+    puts "'#{@address_book.name}' Address Book Selected\n#{@address_book.entries.count} entries"
     puts "0 - Switch AddressBook"
     puts "1 - View all entries"
     puts "2 - Create an entry"
@@ -69,6 +69,7 @@ class MenuController
       @address_book.entries.each do |entry|
         system "clear"
         puts entry.to_s
+
         entry_submenu(entry)
       end
 
@@ -85,7 +86,7 @@ class MenuController
     phone = gets.chomp
     print "Email: "
     email = gets.chomp
-
+    
     address_book.add_entry(name, phone, email)
 
     system "clear"
