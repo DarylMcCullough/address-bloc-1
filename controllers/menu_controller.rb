@@ -157,16 +157,21 @@ class MenuController
   end
 
   def edit_entry(entry)
-    updates = {}
+    #updates = {}
     print "Updated name: "
     name = gets.chomp
-    updates[:name] = name unless name.empty?
+    #updates[:name] = name unless name.empty?
+    entry.update_name(name) unless name.empty?
     print "Updated phone number: "
     phone_number = gets.chomp
-    updates[:phone_number] = phone_number unless phone_number.empty?
+    #updates[:phone_number] = phone_number unless phone_number.empty?
+    entry.update_phone_number(phone_number) unless phone_number.empty?
     print "Updated email: "
     email = gets.chomp
-    updates[:email] = email unless email.empty?
+    #updates[:email] = email unless email.empty?
+    entry.update_email(email) unless email.empty?
+    
+    #entry.update_attributes(updates)
 
     system "clear"
     puts "Updated entry:"
